@@ -1,8 +1,8 @@
 export function adjacentElementsProduct(inputArray: number[]): number {
     // Only if array has sufficient number of elements
     if (inputArray.length > 2 && inputArray.length <= 10) {
-        let maxProduct: number = 0;
-        let adjProduct: number = 0;
+        let maxProduct: number = inputArray[0] * inputArray[1];
+        let adjProduct: number = inputArray[0] * inputArray[1];
 
         // Loop till (n-1)th element
         for (let i: number = 0; i < inputArray.length - 1; i++) {
