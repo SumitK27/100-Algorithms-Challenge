@@ -133,3 +133,21 @@ export function alphabeticShift3(inputString: string): string {
 }
 
 console.log(alphabeticShift3("crazy"));
+
+// Solution Four
+export function alphabeticShift4(inputString: string): string {
+    let inputArray: string[] = inputString.split("");
+    let outputArray: string[] = [];
+
+    inputArray.forEach((character: string) => {
+        if (character !== "z") {
+            outputArray.push(String.fromCharCode(character.charCodeAt(0) + 1));
+        } else {
+            outputArray.push("a");
+        }
+    });
+
+    return outputArray.join("");
+}
+
+console.log(alphabeticShift4("crazy"));
