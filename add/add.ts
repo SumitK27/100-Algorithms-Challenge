@@ -2,12 +2,12 @@ export function add(param1: number, param2: number): number {
     return param1 + param2;
 }
 
-export function add2(...param1: number[]): number {
+export function add2(...params: number[]): number {
     let sum: number = 0;
 
-    for (let i: number = 0; i < param1.length; i++) {
-        sum += param1[i];
-    }
+    params.forEach((param) => {
+        sum += param;
+    });
 
     return sum;
 }
