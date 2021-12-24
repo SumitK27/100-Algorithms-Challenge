@@ -32,3 +32,24 @@ console.log(areEquallyStrong(15, 10, 15, 10));
 console.log(areEquallyStrong(15, 10, 15, 9));
 console.log(areEquallyStrong(25, 30, 15, 9));
 console.log(areEquallyStrong(15, 10, 15, 29));
+
+// Solution 2
+export function areEquallyStrong2(
+    yourLeft: number,
+    yourRight: number,
+    friendsLeft: number,
+    friendsRight: number
+): boolean {
+    const yourStrongest = yourLeft >= yourRight ? yourLeft : yourRight;
+    const yourWeakest = yourLeft <= yourRight ? yourLeft : yourRight;
+    const friendsStrongest =
+        friendsLeft >= friendsRight ? friendsLeft : friendsRight;
+    const friendsWeakest =
+        friendsLeft <= friendsRight ? friendsLeft : friendsRight;
+
+    return yourStrongest === friendsStrongest && yourWeakest == friendsWeakest;
+}
+
+console.log(areEquallyStrong2(10, 15, 15, 10));
+console.log(areEquallyStrong2(15, 10, 15, 10));
+console.log(areEquallyStrong2(15, 10, 15, 9));
