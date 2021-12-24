@@ -20,3 +20,23 @@ export function alternatingSums(a: number[]): number[] {
 console.log(alternatingSums([50, 60, 60, 45, 70]));
 console.log(alternatingSums([]));
 console.log(alternatingSums([150, 160, 160, 145, 170]));
+
+// Solution Two
+export function alternatingSums2(a: number[]): number[] {
+    let evenSum: number = 0;
+    let oddSum: number = 0;
+
+    a.forEach((element, index) => {
+        if (index % 2 === 0) {
+            evenSum += element;
+        } else {
+            oddSum += element;
+        }
+    });
+
+    return [evenSum, oddSum];
+}
+
+console.log(alternatingSums2([50, 60, 60, 45, 70]));
+console.log(alternatingSums2([]));
+console.log(alternatingSums2([150, 160, 160, 145, 170]));
