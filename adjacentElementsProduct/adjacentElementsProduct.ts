@@ -33,3 +33,22 @@ console.log(adjacentElementsProduct([3, 6, -2, -5, 7, 3]));
 console.log(adjacentElementsProduct([1, 9, 3, 7, 4, 5, 2]));
 console.log(adjacentElementsProduct([1]));
 console.log(adjacentElementsProduct([200, 10000, 500, 100]));
+
+export function adjacentElementsProduct2(inputArray: number[]): number {
+    if (inputArray.length < 2) return -1;
+
+    let largestProducts = inputArray[0] * inputArray[1];
+
+    for (let i = 1; i < inputArray.length - 1; i++) {
+        const product = inputArray[i] * inputArray[i + 1];
+
+        largestProducts = largestProducts < product ? product : largestProducts;
+    }
+
+    return largestProducts;
+}
+
+console.log(adjacentElementsProduct2([3, 6, -2, -5, 7, 3]));
+console.log(adjacentElementsProduct2([1, 9, 3, 7, 4, 5, 2]));
+console.log(adjacentElementsProduct2([1]));
+console.log(adjacentElementsProduct2([200, 10000, 500, 100]));
