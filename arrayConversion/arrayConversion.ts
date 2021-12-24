@@ -50,4 +50,48 @@ function getProductPair(inputArray: number[]): number[] {
 // console.log(getSumPair([1, 2, 3, 4, 5, 6, 7]));
 // console.log(getProductPair([1, 2, 3, 4, 5, 6, 7]));
 
+console.log(arrayConversion([1, 2]));
+console.log(arrayConversion([1, 2, 3]));
+console.log(arrayConversion([1, 2, 3, 4]));
+console.log(arrayConversion([1, 2, 3, 4, 5]));
+console.log(arrayConversion([1, 2, 3, 4, 5, 6]));
+console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7]));
 console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7, 8]));
+console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+// Solution Two
+export function arrayConversion2(inputArray: number[]): number {
+    let isOdd = true;
+
+    while (inputArray.length !== 1) {
+        inputArray = sumProduct(inputArray, isOdd);
+        isOdd = !isOdd;
+    }
+
+    return inputArray[0];
+}
+
+function sumProduct(numbers: number[], isOdd: boolean) {
+    const sumProducts: number[] = [];
+
+    if (isOdd) {
+        for (let i = 0; i < numbers.length; i += 2) {
+            sumProducts.push(numbers[i] + numbers[i + 1]);
+        }
+    } else {
+        for (let i = 0; i < numbers.length; i += 2) {
+            sumProducts.push(numbers[i] * numbers[i + 1]);
+        }
+    }
+
+    return sumProducts;
+}
+
+console.log(arrayConversion2([1, 2]));
+console.log(arrayConversion2([1, 2, 3]));
+console.log(arrayConversion2([1, 2, 3, 4]));
+console.log(arrayConversion2([1, 2, 3, 4, 5]));
+console.log(arrayConversion2([1, 2, 3, 4, 5, 6]));
+console.log(arrayConversion2([1, 2, 3, 4, 5, 6, 7]));
+console.log(arrayConversion2([1, 2, 3, 4, 5, 6, 7, 8]));
+console.log(arrayConversion2([1, 2, 3, 4, 5, 6, 7, 8, 9]));
