@@ -19,3 +19,14 @@ export function checkPalindrome(inputString: string): boolean {
 console.log(checkPalindrome("aabaa"));
 console.log(checkPalindrome("abac"));
 console.log(checkPalindrome("a"));
+
+// Solution Two
+export function checkPalindrome2(inputString: string): boolean {
+    const reversed = inputString.split("").reverse().join("");
+
+    return inputString === reversed;
+}
+
+console.log(checkPalindrome2("aabaa"));
+console.log(checkPalindrome2("abac"));
+console.log(checkPalindrome2("a"));
